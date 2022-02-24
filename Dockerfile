@@ -1,3 +1,9 @@
-FROM docker.io/httpd
+FROM docker.io/ubuntu:20.04
+RUN apt update -y  && DEBIAN_FRONTEND=noninteractive apt install -y python3-pip tzdata
+RUN python3 -m pip install django
+RUN echo 'alias python=python3' >> ~/.bashrc
+COPY app/mysite/ /app
 
-COPY index.html /usr/local/apache2/htdocs/index.html
+WORKDIR /app
+
+ENTRYPOINT ["/bin/bash"]
