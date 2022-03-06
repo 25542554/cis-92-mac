@@ -6,4 +6,5 @@ COPY app/mysite/ /app
 
 WORKDIR /app
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["bash"]
+CMD ["-c", "./entrypoint.sh"]
