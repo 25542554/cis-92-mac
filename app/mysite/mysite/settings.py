@@ -80,15 +80,21 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-DATABASES = {	
-    'default': {	
-	    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-	    'NAME': 'mysite',
-	    'USER': 'postgres',
-	    'PASSWORD': 'django',
-	    'HOST': 'postgres',
-    },	
-}	
+import os
+DATABASES = {
+    'sqlite': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/db/db.sqlite3',
+    },
+    'postgres': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'mysite'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'django'),
+        'HOST': os.environ.get('DB_HOST', 'postgres'),
+    },
+}
+DATABASES['default'] = DATABASES[os.environ.get('DB_ENGINE', 'sqlite')]	
 
 
 # Password validation
