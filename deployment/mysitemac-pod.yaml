@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysite
+  name: mysitemac
   labels:
-    app: mysite
+    app: mysitemac
 spec:
   containers:
-  - name: mysite
+  - name: mysitemac
     image: ghcr.io/25542554/cis-92-mac:main
     imagePullPolicy: Always
     ports:
