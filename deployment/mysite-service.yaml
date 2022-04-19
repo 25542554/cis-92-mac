@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysitemac
+  name: mysite
 spec:
   type: LoadBalancer
   selector:
-    app: mysitemac
+    app: mysite
   ports:
     - protocol: TCP
       port: 80
