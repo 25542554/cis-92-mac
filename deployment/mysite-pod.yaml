@@ -28,7 +28,7 @@ spec:
     - containerPort: 8000
     env:
     - name: DB_ENGINE
-      value: "sqlite"
+      value: "postgres"
     - name: DB_NAME
       value: "mysite"
     - name: DB_USER
@@ -38,8 +38,8 @@ spec:
     - name: DB_PASSWORD
       value: "django"
     - name: DJANGO_ADMIN_EMAIL
-      value: "test@test.test"
+      value: "dennis@dennis.com"
     - name: DJANGO_ADMIN_USERNAME
-      value: "test"
+      value: "dennis"
     - name: DJANGO_SUPERUSER_PASSWORD
-      value: "testtest"
+      value: "dennis"
