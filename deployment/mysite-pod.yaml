@@ -38,8 +38,8 @@ spec:
     - name: DB_PASSWORD
       value: "django"
     - name: DJANGO_ADMIN_EMAIL
-      value: "dennis@dennis.com"
+      value: "test@test.test"
     - name: DJANGO_ADMIN_USERNAME
-      value: "dennis"
+      value: "test"
     - name: DJANGO_SUPERUSER_PASSWORD
-      value: "dennis"
+      value: "testtest"
