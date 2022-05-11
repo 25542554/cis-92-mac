@@ -34,7 +34,7 @@ spec:
     - name: DB_USER
       value: "postgres"
     - name: DB_HOST
-      value: "postgres"
+      value: "helm-postgres-postgresql"
     - name: DB_PASSWORD
       value: "django"
     - name: DJANGO_ADMIN_EMAIL
