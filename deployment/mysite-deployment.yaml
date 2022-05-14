@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysite-deployment
+  labels:
+    app: mysite
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysite
+  template:
+    metadata:
+      labels:
+        app: mysite
+    spec:
+      containers:
+      - name: mysite
+        image: ghcr.io/25542554/cis-92-mac:main
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DB_ENGINE
+          value: "postgres"
+        - name: DB_NAME
+          value: "mysite"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_HOST
+          value: "helm-postgres-postgresql"
+        - name: DB_PASSWORD
+          value: "django"
+        - name: DJANGO_ADMIN_EMAIL
+          value: "test@test.test"
+        - name: DJANGO_ADMIN_USERNAME
+          value: "test"
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: "testtest"
